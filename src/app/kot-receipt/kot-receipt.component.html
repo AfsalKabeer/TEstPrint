@@ -1,0 +1,39 @@
+<div class="kot-receipt" id="kot-receipt-content">
+    <h2 style="text-align: center;">{{ companyName }}</h2>
+    <p style="text-align: center;">{{ companyAddress }}</p>
+    <p style="text-align: center;">Phone: {{ companyPhone }}</p>
+    <hr>
+    
+    <p style="text-align: center; font-weight: bold;">KOT Receipt</p>
+    
+    <p>Order Number: {{ kotDetails.orderNumber }}</p>
+    <p>Date: {{ date }}</p>
+    <p>Time: {{ time }}</p>
+    
+    <table border="1" width="100%">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of kotDetails.items">
+          <td>{{ item.name }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>\${{ item.price }}</td>
+          <td>\${{ (item.quantity * item.price) | number:'1.2-2' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <p style="text-align: right; font-weight: bold;">Total: \${{ kotDetails.total | number:'1.2-2' }}</p>
+  </div>
+  
+  <div class="actions">
+    <button (click)="printReceipt()">Print Receipt</button>
+    <button (click)="downloadReceipt()">Download as PDF</button>
+  </div>
+  

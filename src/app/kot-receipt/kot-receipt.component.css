@@ -1,0 +1,56 @@
+/* General receipt styling */
+.kot-receipt {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    width: 80mm; /* Set width to 80mm */
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  /* Print styles for the 80mm paper size */
+  @media print {
+    .kot-receipt {
+      width: 80mm; /* Set the print width to 80mm */
+      margin: 0;
+      padding: 0;
+      border: none;
+      font-size: 12px; /* Adjust font size for better fit */
+    }
+  
+    body {
+      width: 80mm;
+      margin: 0;
+      padding: 0;
+    }
+  
+    .kot-receipt table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+  
+    .kot-receipt th, .kot-receipt td {
+      padding: 5px;
+      text-align: left;
+    }
+  }
+  
+  .actions {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .actions button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .actions button:hover {
+    background-color: #45a049;
+  }
+  
